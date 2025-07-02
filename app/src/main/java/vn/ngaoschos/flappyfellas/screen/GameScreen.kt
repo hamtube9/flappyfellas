@@ -91,7 +91,7 @@ fun GameScreen(navController : NavController, gameId : String?){
             birdOffset = 0.dp
             birdRect = Rect(0f, 0f, 64.dp.value, 64.dp.value)
 
-            navController.navigate(AppRouter.GAME_OVER.name)
+            navController.navigate(AppRouter.GAME_OVER_SCREEN)
         }
     }
 

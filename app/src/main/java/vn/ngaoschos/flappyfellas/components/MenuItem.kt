@@ -42,7 +42,7 @@ fun MenuItem(navController: NavController,
         shape = shareRounded,
         modifier = Modifier
             .size(width = width.dp, height = height.dp)
-            .clickable { navController.navigate("${AppRouter.GAME.name}/$originName") }
+//            .clickable { navController.navigate("${AppRouter.GAME.name}/$originName") }
             .border(BorderStroke(2.dp, Color.Black),
                 shareRounded
             )

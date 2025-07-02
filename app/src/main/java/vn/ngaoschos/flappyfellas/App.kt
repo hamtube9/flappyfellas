@@ -1,6 +1,8 @@
 package vn.ngaoschos.flappyfellas
 
 import android.os.Bundle
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -19,19 +21,20 @@ import androidx.compose.runtime.getValue
 @Composable
 fun AppFlappyFellas(navController : NavHostController = rememberNavController()){
     val backStackEntry by navController.currentBackStackEntryAsState()
-    val currentScreen = AppRouter.valueOf(
-        backStackEntry?.destination?.route ?: AppRouter.GAME.name
-    )
+
 
     NavHost( navController = navController,
-        startDestination = AppRouter.GAME.name,) {
-        composable(AppRouter.MENU.name){
+        startDestination = AppRouter.MAIN_SCREEN,
+//        enterTransition = {slideInHorizontally()},
+//        exitTransition = { slideOutHorizontally() }
+    ) {
+        composable(AppRouter.MAIN_SCREEN){
             FlappyFellasTheme(colorScheme = menuTheme) {
                 MenuScreen(navController)
             }
         }
 
-        composable("${AppRouter.GAME.name}/{gameId}") {
+        composable(AppRouter.GAME_SCREEN) {
             val gameId = it.arguments?.getString("gameId")
             val gameTheme = getGameTheme(gameId)
             val bundle = Bundle()
@@ -42,11 +45,10 @@ fun AppFlappyFellas(navController : NavHostController = rememberNavController())
             }
         }
 
-        composable(AppRouter.GAME_OVER.name) {
+        composable(AppRouter.GAME_OVER_SCREEN) {
             GameOverScreen(navController)
         }
 
     }
 }
-
 

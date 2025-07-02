@@ -87,7 +87,7 @@ fun MenuScreen(navController: NavController){
                     verticalAlignment = Alignment.CenterVertically) {
                     space(dpWith = 30.dp)
                     Image(painter = painterResource(R.drawable.logo), contentDescription = "Play", modifier = Modifier.bounceClick(onClick = {
-                        navController.navigate("${AppRouter.GAME.name}/fellas")
+                        navController.navigate("${AppRouter.GAME_SCREEN_NAME}/fellas")
                     }))
                 }
             }
