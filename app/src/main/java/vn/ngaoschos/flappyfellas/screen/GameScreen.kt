@@ -24,7 +24,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import vn.ngaoschos.flappyfellas.R
 import vn.ngaoschos.flappyfellas.components.Background
 import vn.ngaoschos.flappyfellas.components.Bird
 import vn.ngaoschos.flappyfellas.components.Ground
